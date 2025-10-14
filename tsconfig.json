@@ -19,7 +19,6 @@
       }
     ],
     "baseUrl": ".",
-   "ignoreDeprecations": "true"
     "paths": {
       "@/*": ["src/*"]
     }
@@ -28,4 +27,5 @@
   "exclude": ["node_modules"]
 
 }
+
 
