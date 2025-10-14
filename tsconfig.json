@@ -19,7 +19,7 @@
       }
     ],
     "baseUrl": ".",
-   "ignoreDeprecations": "5.0"
+   "ignoreDeprecations": "true"
     "paths": {
       "@/*": ["src/*"]
     }
@@ -28,3 +28,4 @@
   "exclude": ["node_modules"]
 
 }
+
