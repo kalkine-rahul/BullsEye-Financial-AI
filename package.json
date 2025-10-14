@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "NODE_OPTIONS='--ignoreDeprecations=warn' next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,7 +15,7 @@
     "axios": "^1.9.0",
     "chart.js": "^4.4.9",
     "libphonenumber-js": "^1.12.23",
-    "next": "14.2.3",
+    "next": "^15.5.5",
     "pg": "^8.16.3",
     "react": "18.3.1",
     "react-chartjs-2": "^5.3.0",
@@ -33,7 +33,7 @@
     "@types/node": "^24.7.2",
     "@types/react": "^19.2.2",
     "eslint": "^8.57.1",
-    "eslint-config-next": "15.3.2",
+    "eslint-config-next": "^15.5.5",
     "tailwindcss": "^4"
   }
 }
