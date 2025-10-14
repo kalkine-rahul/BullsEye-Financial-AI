@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+   "build": "NODE_OPTIONS='--ignoreDeprecations=warn' next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -37,3 +37,4 @@
     "tailwindcss": "^4"
   }
 }
+
