@@ -1,0 +1,505 @@
+/* LeadFormModal.css */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lead-form-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active .lead-form-container {
+  transform: translateY(0) scale(1);
+}
+
+.lead-form-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px;
+  position: relative;
+  border-radius: 16px 16px 0 0;
+}
+
+.lead-form-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.close-modal:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.lead-form-body {
+  padding: 32px;
+}
+
+/* Step Indicator */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.step {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e9ecef;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  background: #667eea;
+  color: white;
+}
+
+.step-line {
+  width: 60px;
+  height: 2px;
+  background: #e9ecef;
+  margin: 0 12px;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.875rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-control.is-valid {
+  border-color: #48bb78;
+}
+
+.form-control.is-invalid {
+  border-color: #f56565;
+}
+
+/* Phone Input Group */
+.phone-input-group {
+  display: flex;
+  gap: 12px;
+}
+
+.phone-input-container {
+  flex: 1;
+}
+
+.otp-button-container {
+  flex-shrink: 0;
+}
+
+.btn-send-otp {
+  background: #f2500a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.btn-send-otp:hover:not(:disabled) {
+  background: #d84315;
+  transform: translateY(-1px);
+}
+
+.btn-send-otp:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.phone-hint {
+  font-size: 0.75rem;
+  color: #718096;
+  margin-top: 4px;
+}
+
+/* OTP Styles */
+.otp-step {
+  text-align: center;
+}
+
+.otp-instructions {
+  margin-bottom: 32px;
+}
+
+.otp-instructions p {
+  color: #4a5568;
+  margin-bottom: 12px;
+}
+
+.phone-confirmation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.phone-number {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.change-number {
+  background: none;
+  border: none;
+  color: #667eea;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.875rem;
+}
+
+.otp-container {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.otp-input {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.otp-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.otp-input.error {
+  border-color: #f56565;
+}
+
+.otp-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-verify {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-verify:hover:not(:disabled) {
+  background: #5a6fd8;
+  transform: translateY(-1px);
+}
+
+.btn-verify:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+}
+
+.resend-otp {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  color: #667eea;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.resend-btn.disabled {
+  color: #a0aec0;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+/* Terms and Conditions */
+.terms-container {
+  margin: 24px 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.checkbox-input {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.2s ease;
+}
+
+.checkbox-input:checked + .checkmark {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.checkbox-input:checked + .checkmark::after {
+  content: '✓';
+  color: white;
+  font-size: 14px;
+}
+
+.checkbox-label a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+/* Alerts */
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.alert-error {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.alert-icon {
+  font-size: 1.25rem;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+/* Spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error Messages */
+.text-danger {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.text-danger::before {
+  content: '⚠';
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .lead-form-body {
+    padding: 24px;
+  }
+  
+  .phone-input-group {
+    flex-direction: column;
+  }
+  
+  .otp-button-container {
+    width: 100%;
+  }
+  
+  .btn-send-otp {
+    width: 100%;
+    padding: 14px;
+  }
+  
+  .otp-input {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+  
+  .lead-form-container {
+    border-radius: 12px;
+  }
+  
+  .lead-form-header {
+    padding: 20px;
+  }
+  
+  .lead-form-body {
+    padding: 20px;
+  }
+  
+  .otp-input {
+    width: 45px;
+    height: 45px;
+  }
+}

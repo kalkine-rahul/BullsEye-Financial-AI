@@ -1,0 +1,10 @@
+// jsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": "src",              // Required to use "@/..."
+    "paths": {
+      "@/*": ["*"]                 // Makes "@/component/..." map to "src/component/..."
+    },
+    "ignoreDeprecations": "6.0"    // Silences baseUrl deprecation error for TypeScript 7.0
+  }
+}
