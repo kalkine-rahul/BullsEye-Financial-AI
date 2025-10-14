@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
+      "build": "next build",
     "lint": "next lint"
   },
   "dependencies": {
@@ -36,5 +37,6 @@
     "tailwindcss": "^4"
   }
 }
+
 
 
