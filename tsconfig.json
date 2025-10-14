@@ -19,11 +19,12 @@
       }
     ],
     "baseUrl": ".",
-    "ignoreDeprecations": "6.0",
+   "ignoreDeprecations": "5.0"
     "paths": {
       "@/*": ["src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/stocksData/page.ts", "src/lib/eodhd_api.js", "src/component/MarketSnapshot.js", "src/component/Megamenu.jsx"],
   "exclude": ["node_modules"]
+
 }
