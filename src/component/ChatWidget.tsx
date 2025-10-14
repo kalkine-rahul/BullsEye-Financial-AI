@@ -9,8 +9,8 @@ export default function ChatWidget() {
   const [attentionAnim, setAttentionAnim] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   
-  const chatWindowRef = useRef(null);
-  const chatButtonRef = useRef(null);
+  const chatWindowRef = useRef<HTMLDivElement>(null);
+  const chatButtonRef = useRef<HTMLButtonElement>(null);
 
   // Show attention animation periodically when chat is closed
   useEffect(() => {
@@ -24,25 +24,25 @@ export default function ChatWidget() {
   }, [open]);
 
   // Close chat when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      // If chat is open and click is outside both chat window and chat button
-      if (
-        open &&
-        chatWindowRef.current &&
-        !chatWindowRef.current.contains(event.target) &&
-        chatButtonRef.current &&
-        !chatButtonRef.current.contains(event.target)
-      ) {
-        setOpen(false);
-      }
-    };
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    // If chat is open and click is outside both chat window and chat button
+    if (
+      open &&
+      chatWindowRef.current &&
+      !chatWindowRef.current.contains(event.target as Node) &&
+      chatButtonRef.current &&
+      !chatButtonRef.current.contains(event.target as Node)
+    ) {
+      setOpen(false);
+    }
+  };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [open]);
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, [open]);
 
   const toggleChat = () => {
     setOpen(prev => !prev);
