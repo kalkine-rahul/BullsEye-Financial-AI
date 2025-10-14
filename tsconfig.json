@@ -17,7 +17,6 @@
       { "name": "next" }
     ],
     "baseUrl": ".",
-"verbatimModuleSyntax": true,
     "paths": {
       "@/*": ["src/*"]
     }
@@ -25,4 +24,3 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/**/*"],
   "exclude": ["node_modules"]
 }
-
