@@ -14,13 +14,6 @@ export default function Landing() {
             and a chatbot assistant into one seamless platform.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-blue-500 hover:bg-blue-600  px-8 py-3 rounded-lg font-medium transition-colors flex items-center justify-center">
-              <i className="fas fa-rocket mr-2"></i> Get Started Free
-            </button>
-            <button className="bg-transparent border border-white hover:bg-white/10  px-8 py-3 rounded-lg font-medium transition-colors flex items-center justify-center">
-              <i className="fas fa-play-circle mr-2"></i> Watch Demo
-            </button>
-          </div>
         </div>
         
         {/* Dashboard Preview */}
@@ -69,3 +62,4 @@ export default function Landing() {
     </div>
   )
 }
+
