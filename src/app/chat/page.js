@@ -106,7 +106,7 @@ export default function ChatPage() {
             className="flex-grow border border-gray-300 p-2 rounded-lg resize-none
             focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-gray-800
             transition-all duration-200"
-            placeholder="Type your message and Enter..."
+            placeholder="Please type here..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => {

@@ -4,7 +4,7 @@ export default function Pagination({
   totalItems,
   itemsPerPage,
   currentPage,
-  onPageChange = () => {},
+  onPageChange,
 }) {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
@@ -14,42 +14,77 @@ export default function Pagination({
     }
   };
 
-  const pages = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pages.push(i);
-  }
+  const getPages = () => {
+    const pages = [];
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      if (currentPage <= 4) {
+        pages.push(1, 2, 3, 4, 5, "...", totalPages);
+      } else if (currentPage >= totalPages - 3) {
+        pages.push(
+          1,
+          "...",
+          totalPages - 4,
+          totalPages - 3,
+          totalPages - 2,
+          totalPages - 1,
+          totalPages
+        );
+      } else {
+        pages.push(
+          1,
+          "...",
+          currentPage - 1,
+          currentPage,
+          currentPage + 1,
+          "...",
+          totalPages
+        );
+      }
+    }
+    return pages;
+  };
+
+  const pages = getPages();
 
   return (
-    <div className="flex justify-center items-center space-x-2 mt-4">
+    <div className="flex justify-center items-center space-x-2 mt-6">
+      {/* Previous Button */}
       <button
-        aria-label="Go to previous page"
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="rounded-full border border-slate-300 py-2 px-3 text-sm transition-all shadow-sm hover:shadow-lg text-white hover:text-white  focus:text-white  focus:border-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        className="text-sm font-medium text-gray-400 hover:text-black disabled:text-gray-300"
       >
-        Prev
+        Previous
       </button>
 
-      {pages.map((page) => (
-        <button
-          key={page}
-          aria-label={`Go to page ${page}`}
-          onClick={() => handlePageChange(page)}
-          className={`min-w-9 rounded-full py-2 px-3.5 border text-sm transition-all shadow-sm ml-1 ${
-            currentPage === page
-              ? "bg-slate-800 text-white border-transparent shadow-md"
-              : "border-slate-300 text-white"
-          }`}
-        >
-          {page}
-        </button>
-      ))}
+      {/* Page Numbers */}
+      {pages.map((page, index) =>
+        page === "..." ? (
+          <span key={index} className="px-2 text-gray-500 select-none">
+            ...
+          </span>
+        ) : (
+          <button
+            key={page}
+            onClick={() => handlePageChange(page)}
+            className={`w-8 h-8 text-sm font-medium rounded ${
+              currentPage === page
+                ? "bg-black text-white"
+                : "text-black hover:bg-gray-100"
+            }`}
+          >
+            {page}
+          </button>
+        )
+      )}
 
+      {/* Next Button */}
       <button
-        aria-label="Go to next page"
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="rounded-full border border-slate-300 py-2 px-3 text-sm transition-all shadow-sm hover:shadow-lg text-white hover:text-white hover:border-slate-800 focus:text-white  focus:border-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        className="text-sm font-medium text-gray-400 hover:text-black disabled:text-gray-300"
       >
         Next
       </button>

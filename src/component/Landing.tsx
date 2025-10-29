@@ -1,65 +1,92 @@
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Landing() {
-  return (
-    <div>
-         <section className="gradient-bg text-black py-16 md:py-24">
-      <div className="container mx-auto px-4 flex flex-col items-center text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Market Intelligence, <span className="text-blue-300">Simplified</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            BullsEye unifies real-time financial news, stock market data, AI-driven sentiment analysis, 
-            and a chatbot assistant into one seamless platform.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-        </div>
-        
-        {/* Dashboard Preview */}
-        <div className="mt-16 w-full max-w-5xl mx-auto bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 shadow-2xl">
-          <div className="bg-gray-900/50 p-4 flex space-x-2">
-            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+  return (  
+    <section className="py-12 bg-black sm:pb-16 lg:pb-20 xl:pb-24">
+      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="relative">
+          {/* LEFT CONTENT */}
+          <div className="lg:w-2/3">
+            <p className="text-sm font-normal tracking-widest text-gray-300 uppercase">
+              Real-Time Financial Insights for Smarter Decisions
+            </p>
+
+            <h1 className="mt-6 text-4xl font-normal text-white sm:mt-10 sm:text-5xl lg:text-6xl xl:text-8xl">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">
+                BullsEye
+              </span>{" "}
+              – News, Stocks & Sentiment Intelligence
+            </h1>
+
+            <p className="max-w-2xl mt-4 text-xl font-normal text-gray-400 sm:mt-8">
+              BullsEye is a smart, full-stack platform that combines real-time news, 
+              stock market data, sentiment analysis, and AI-powered chat into a single dashboard. 
+              Whether you're a trader, analyst, or market enthusiast, BullsEye gives you 
+              a true pulse on the market.
+            </p>
+
+            <div className="relative inline-flex items-center justify-center mt-8 sm:mt-12 group">
+              <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
+              <Link
+                href="/dashboard"
+                className="relative inline-flex items-center justify-center px-8 py-3 text-base font-normal text-white bg-black border border-transparent rounded-full"
+              >
+                Explore the Dashboard
+              </Link>
+            </div>
+
+            <div>
+              <div className="inline-flex items-center pt-6 mt-8 border-t border-gray-800 sm:pt-10 sm:mt-14">
+                <svg
+                  className="w-6 h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth="1.5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 7.00003H21M21 7.00003V15M21 7.00003L13 15L9 11L3 17"
+                    stroke="url(#a)"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="a"
+                      x1="3"
+                      y1="7.00003"
+                      x2="22.2956"
+                      y2="12.0274"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0%" stopColor="#06b6d4" />
+                      <stop offset="100%" stopColor="#a855f7" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <span className="ml-2 text-base font-normal text-white">
+                  5,000+ traders analyzed data with BullsEye last week
+                </span>
+              </div>
+            </div>
           </div>
-          <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="bg-white/5 p-4 rounded-lg">
-                <div className="flex justify-between mb-2">
-                  <span className="text-gray-500">S&P 500</span>
-                  <span className="text-green-500">+1.25%</span>
-                </div>
-                <div className="text-2xl font-bold">4,567.89</div>
-              </div>
-              <div className="bg-white/5 p-4 rounded-lg">
-                <div className="flex justify-between mb-2">
-                  <span className="text-gray-400">NASDAQ</span>
-                  <span className="text-green-400">+0.89%</span>
-                </div>
-                <div className="text-2xl font-bold">14,203.45</div>
-              </div>
-            </div>
-            <div className="bg-white/5 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold mb-3">Market Sentiment</h3>
-              <div className="flex items-center mb-2">
-                <div className="w-full bg-gray-700 rounded-full h-2.5">
-                  <div className="bg-green-500 h-2.5 rounded-full" style={{ width: '65%' }}></div>
-                </div>
-                <span className="ml-2 text-sm">65% Positive</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-full bg-gray-700 rounded-full h-2.5">
-                  <div className="bg-red-500 h-2.5 rounded-full" style={{ width: '35%' }}></div>
-                </div>
-                <span className="ml-2 text-sm">35% Negative</span>
-              </div>
-            </div>
+
+          {/* RIGHT IMAGE */}
+          <div className="mt-8 md:absolute md:mt-0 md:top-32 lg:top-0 md:right-0">
+            <Image
+              className="w-full max-w-xs mx-auto lg:max-w-lg xl:max-w-xl"
+              src="/landing-image1.jpg"
+              alt="BullsEye Market Intelligence Dashboard"
+              width={1000}
+              height={1000}
+              priority
+            />
           </div>
         </div>
       </div>
     </section>
-    </div>
   )
 }
-

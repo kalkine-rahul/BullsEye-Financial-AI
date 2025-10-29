@@ -128,8 +128,8 @@ useEffect(() => {
           onMouseLeave={() => setIsHovering(false)}
           className={`relative w-20 h-20 rounded-2xl cursor-pointer transition-all duration-300 flex items-center justify-center group ${
             open 
-              ? 'bg-gradient-to-br from-gray-700 to-gray-900 shadow-2xl border-4 border-gray-300' 
-              : 'bg-gradient-to-br from-blue-600 to-purple-700 shadow-2xl hover:shadow-3xl border-4 border-white'
+              ? 'bg-gradient-to-br from-gray-700 to-gray-900' 
+              : 'bg-gradient-to-br from-blue-600 to-purple-700'
           } ${attentionAnim ? 'animate-pulseStrong' : ''}`}
           aria-label={open ? "Close chat" : "Open AI chat assistant"}
         >
@@ -148,21 +148,22 @@ useEffect(() => {
           <div className="relative z-10 transform transition-transform duration-300 group-hover:scale-110">
             {open ? (
               // Close icon - high contrast
-              <div className="bg-white rounded-lg p-2 shadow-inner">
+              <div className=" rounded-lg p-2 shadow-inner">
                 <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
             ) : (
               // Animated GIF with border
-              <div className="bg-white rounded-xl p-1 border-2 border-blue-300 shadow-inner">
+              <div className="rounded-xl p-1 border-2 border-blue-300 shadow-inner">
                 <Image
-                  src="/chatbots.gif"
+                  src="/chat-bot-icon.webp"
                   alt="AI Assistant"
                   width={45}
                   height={45}
                   className=""
                   priority
+                  unoptimized
                 />
               </div>
             )}
@@ -173,7 +174,7 @@ useEffect(() => {
             <div className="absolute -top-2 -right-2 z-20">
               <div className="relative">
                 <div className="w-6 h-6 bg-red-500 rounded-full border-2 border-white animate-pulseStrong"></div>
-                <div className="absolute inset-0 w-6 h-6 bg-red-500 rounded-full animate-pingFast border-2 border-white"></div>
+                <div className="absolute inset-0 w-6 h-6 bg-red-500 rounded-full animate-pingFast border-2 "></div>
               </div>
             </div>
           )}
