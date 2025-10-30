@@ -211,7 +211,7 @@ export default function StockTable() {
       </div>
     </div>
     <div>
-      <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-black">
+      <h2 className="text-2xl font-bold bg-gradient-to-r from-white text-blue-900 bg-clip-text ">
         Market Intelligence
       </h2>
       <p className="text-black text-sm">Live market data & smart alerts</p>

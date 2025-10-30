@@ -79,7 +79,15 @@ export default function Megamenu() {
                   Articles
                 </Link>
               </li>
-
+              
+              <li>
+                <Link
+                  href="/market-dashboard"
+                  className="text-sm text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-3 rounded-lg hover:bg-gray-50 block"
+                >
+                 Market
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/screeners"
@@ -272,6 +280,18 @@ export default function Megamenu() {
             </li>
             <li>
               <Link
+                href="market-dashboard"
+                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors font-medium"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsMobileMarketUpdateOpen(false);
+                }}
+              >
+               Market
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/screeners"
                 className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors font-medium"
                 onClick={() => {
@@ -377,7 +397,6 @@ export default function Megamenu() {
                 </ul>
               )}
             </li>
-
             <li className="border-t border-gray-100 pt-2 mt-2">
               <Link
                 href="/cart"

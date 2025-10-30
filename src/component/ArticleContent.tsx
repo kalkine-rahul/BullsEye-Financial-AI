@@ -44,7 +44,7 @@ export default function ArticlesList() {
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl font-bold text-blue-900 mb-4">
           Latest Articles
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">

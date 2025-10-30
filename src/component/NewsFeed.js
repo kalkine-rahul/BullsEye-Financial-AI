@@ -56,7 +56,7 @@ const NewsFeed = () => {
           <FaChartLine className="text-blue-600 text-2xl" />
         </div>
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Market News</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-blue-900">Market News</h1>
           <p className="text-gray-600">Stay updated with the latest financial headlines</p>
         </div>
       </div>

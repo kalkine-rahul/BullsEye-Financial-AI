@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FAQSection from "./FAQSection";
 
 // Types
 interface Stock {
@@ -168,11 +169,11 @@ export default function ScreenerPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Stock Screener</h1>
+          <h1 className="text-3xl font-bold text-blue-900">Stock Screener</h1>
           <p className="text-gray-600 mt-2">Showing {filteredStocks.length} Results</p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 mb-12">
           {/* Sidebar Filters */}
           <div className="lg:w-80 flex-shrink-0">
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-6">
@@ -389,7 +390,9 @@ export default function ScreenerPage() {
             </div>
           </div>
         </div>
-      </div>
+         <FAQSection/>
+      </div> 
     </div>
+    
   );
 }
