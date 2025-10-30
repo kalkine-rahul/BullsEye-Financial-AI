@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function FAQSection() {
   const [openItems, setOpenItems] = useState([0]); // Start with first item open
 
-  const toggleItem = (index) => {
+  const toggleItem = (index: number) => {
     if (openItems.includes(index)) {
       setOpenItems(openItems.filter(item => item !== index));
     } else {
@@ -67,7 +67,7 @@ export default function FAQSection() {
   return (
     <div className="mt-2">
       <div className="mb-8">
-      <h3 className="text-2xl font-bold text-blue-900">Frequently Asked Questions</h3>
+        <h3 className="text-2xl font-bold text-blue-900">Frequently Asked Questions</h3>
         <p className="mt-2 text-gray-600">Find answers to common questions that come in your mind related to screener.</p>
       </div>
       
