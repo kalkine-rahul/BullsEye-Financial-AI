@@ -144,7 +144,7 @@ export default function Megamenu() {
                     </li>
                     <li>
                       <Link
-                        href="/market-update/forex"
+                        href="/market-update/daily-wrap"
                         className="text-gray-800 hover:bg-gray-50 flex items-center p-2 rounded transition-colors"
                       >
                         <div className="flex items-center justify-center bg-white border border-gray-200 rounded shadow-sm h-7 w-7 shrink-0 mr-3">
@@ -352,7 +352,7 @@ export default function Megamenu() {
                   </li>
                   <li>
                     <Link
-                      href="/market-update/forex"
+                      href="/market-update/daily-wrap"
                       className="text-gray-800 hover:bg-gray-50 flex items-center p-2 rounded transition-colors"
                       onClick={() => {
                         setIsMobileMenuOpen(false);
@@ -427,4 +427,5 @@ export default function Megamenu() {
       </header>
     </div>
   );
+
 }
