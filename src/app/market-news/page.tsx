@@ -5,10 +5,11 @@ import './market.css';
 
 const NewsPage: React.FC = () => {
   return (
-    <div className="pt-24 px-4 md:px-8 min-h-screen">
+    <div className="pt-12 px-4 md:px-8 min-h-screen">
       <NewsFeed />
     </div>
   );
 };
 
 export default NewsPage;
+
